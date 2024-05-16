@@ -14,7 +14,7 @@ app.use(requestLogInterceptor);
 const userService = new UserService();
 const userController = new UserController(userService);
 const routes = new Routes(router, userController);
-const rs = await routes.getRoutes();
+const rs = routes.getRoutes();
 app.use("/api/v1",rs);
 app.use(requestLogInterceptor);
 app.use(responseLogInterceptor);

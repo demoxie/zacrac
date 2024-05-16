@@ -8,7 +8,7 @@ export class Routes{
         this.router = app;
         this.userController = userController
     }
-    public getRoutes = async ()=>{
+    public getRoutes = ()=>{
         const {createProfile, getUserProfiles, getUserProfile, updateUserProfile, deleteUserProfile} = this.userController;
 
         this.router.post("/profiles",createProfile);
