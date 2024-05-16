@@ -24,6 +24,7 @@
       "express": "^4.19.2",
       "morgan": "^1.10.0",
       "mysql": "^2.14.1",
+      "mysql2": "^3.9.7",
       "reflect-metadata": "^0.1.14",
       "typeorm": "^0.3.20"
    }
