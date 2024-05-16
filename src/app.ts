@@ -1,0 +1,21 @@
+import express, {Express, Router} from "express";
+import "reflect-metadata";
+import {Routes} from "./routes";
+import morgan from "morgan";
+import {requestLogInterceptor, responseLogInterceptor} from "./middlewares";
+import {UserService} from "./service/user.service";
+import {UserController} from "./controller/user.controller";
+
+const app: Express = express();
+const router: Router = express.Router();
+app.use(express.json());
+app.use(morgan('dev'));
+app.use(requestLogInterceptor);
+const userService = new UserService();
+const userController = new UserController(userService);
+const routes = new Routes(router, userController);
+const rs = await routes.getRoutes();
+app.use("/api/v1",rs);
+app.use(requestLogInterceptor);
+app.use(responseLogInterceptor);
+export default app;
