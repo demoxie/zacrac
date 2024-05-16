@@ -3,6 +3,7 @@ import { DataSource } from "typeorm"
 import { User } from "../../entity/user.entity"
 import dotenv from "dotenv";
 dotenv.config();
+
 export const AppDataSource = new DataSource({
     type: "mysql",
     port: parseInt((process.env.DB_PORT)),
