@@ -21,7 +21,7 @@
    },
    "dependencies": {
       "debug": "^4.3.4",
-      "express": "^4.19.2",
+      "express": "^4.22.0",
       "morgan": "^1.10.0",
       "mysql": "^2.14.1",
       "mysql2": "^3.9.7",
